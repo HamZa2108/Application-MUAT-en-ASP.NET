@@ -1,0 +1,22 @@
+﻿<h4>Recherche de documents</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" action="ShowSearchResults">
+
+            <div class="form-group">
+                <label for="SearchPhrase" class="control-label">Nom du document</label>
+                <input name="SearchPhrase" class="form-control" />
+            </div>
+
+
+            <div class="form-group">
+                <input type="submit" value="Rechercher" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    @Html.ActionLink("Retour", "Index")
+</div>

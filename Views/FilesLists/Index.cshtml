@@ -1,0 +1,44 @@
+﻿@model IEnumerable<MUAT.Models.FilesList>
+
+@{
+    ViewBag.Title = "Liste des documents";
+}
+
+<h2>Liste des documents</h2>
+
+<p>
+    @Html.ActionLink("Ajouter", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Nom du document
+        </th>
+        <th>
+            Date
+        </th>
+        <th>
+            Details
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FileName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FileDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FileDetails)
+        </td>
+        <td>
+            @Html.ActionLink("Modifier", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Supprimer", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

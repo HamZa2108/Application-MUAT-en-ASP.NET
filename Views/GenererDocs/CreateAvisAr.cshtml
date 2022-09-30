@@ -1,0 +1,56 @@
+﻿@model MUAT.Models.GenererDoc
+
+@{
+    ViewBag.Title = "CreateAvisAr";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Génération de documents</h2>
+
+<h4>Selectionner le type de document à générer</h4>
+<select onchange="location.href = 'https://localhost:44348/' + this.value;" style="width:15%; border-bottom-left-radius:4px; border-top-left-radius:4px;">
+    <option value="default" selected disabled hidden>--</option>
+    <option value="GenererDocs/CreateCPS">CPS</option>
+    <option value="GenererDocs/CreateRC">RC</option>
+    <option value="GenererDocs/CreateAvisFr">Avis Français</option>
+    <option value="GenererDocs/CreateAvisAr">Avis Arabe</option>
+</select>
+
+<h3>Générer Avis Arabe</h3>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>Veuillez remplir les champs</h4>
+    <div class="form-group">
+        <div class="col-md-10">
+            <label for="titre" class="control-label">موضوع طلب العروض</label>
+            <input name="titre" class="form-control" />
+            <label for="numero" class="control-label">N°</label>
+            <input name="numero" class="form-control" />
+            <label for="date" class="control-label">وقت و تاريخ فتح الأظرفة</label>
+            <input name="date" class="form-control" />
+            <label for="lot1" class="control-label">الحصة الأولى</label>
+            <input name="lot1" class="form-control" />
+            <label for="lot2" class="control-label">*الحصة الثانية *غير إجبارى</label>
+            <input name="lot2" class="form-control" />
+            <label for="cautprov1" class="control-label">مبلغ الضمان المؤقت للحصة الأولى</label>
+            <input name="cautprov1" class="form-control" />
+            <label for="cautprov2" class="control-label">*مبلغ الضمان المؤقت للحصة الثانية *غير إجبارى</label>
+            <input name="cautprov2" class="form-control" />
+            <label for="estimation1" class="control-label">كلفة تقدير الأعمال للحصة الأولى</label>
+            <input name="estimation1" class="form-control" />
+            <label for="estimation2" class="control-label">*كلفة تقدير الأعمال للحصة الثانية *غير إجبارى</label>
+            <input name="estimation2" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Générer" class="btn btn-primary" />
+        </div>
+    </div>
+</div>
+}

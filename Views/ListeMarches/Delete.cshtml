@@ -1,0 +1,47 @@
+﻿@model MUAT.Models.ListeMarches
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Supprimer marché</h2>
+
+<h3>Souhaitez-vous vraiment supprimer ce marché?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <label>Titre du marché:</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TitreMarche)
+        </dd>
+
+        <dt>
+            <label>Lien:</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LienMarche)
+        </dd>
+
+        <dt>
+            <label>Status:</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color col-md-offset-1">
+            <input type="submit" value="Supprimer" class="btn btn-danger" /> |
+            @Html.ActionLink("Retour", "Index")
+        </div>
+    }
+</div>

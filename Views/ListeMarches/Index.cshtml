@@ -1,0 +1,50 @@
+﻿@model IEnumerable<MUAT.Models.ListeMarches>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Liste des marchés</h2>
+
+<p>
+    @Html.ActionLink("Ajouter", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Titre du marché
+        </th>
+        <th>
+            Lien
+        </th>
+        <th>
+            Liste des documents
+        </th>
+        <th>
+            Status
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TitreMarche)
+        </td>
+        <td>
+            <a href="@Html.DisplayFor(modelItem => item.LienMarche)" target="_blank">@Html.DisplayFor(modelItem => item.LienMarche)</a>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ListeDocs)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.ActionLink("Modifier", "Edit", new { id=item.Id })<br />
+            @Html.ActionLink("Supprimer", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

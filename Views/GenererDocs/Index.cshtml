@@ -1,0 +1,17 @@
+﻿@model IEnumerable<MUAT.Models.GenererDoc>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Génération de documents</h2>
+
+<p>Selectionner le type de document à générer</p>
+<select onchange="location.href = 'https://localhost:44348/' + this.value;" style="width:15%; border-bottom-left-radius:4px; border-top-left-radius:4px;">
+    <option value="default" selected disabled hidden>--</option>
+    <option value="GenererDocs/CreateCPS">CPS</option>
+    <option value="GenererDocs/CreateRC">RC</option>
+    <option value="GenererDocs/CreateAvisFr">Avis Français</option>
+    <option value="GenererDocs/CreateAvisAr">Avis Arabe</option>
+</select>

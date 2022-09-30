@@ -1,0 +1,50 @@
+﻿@model MUAT.Models.ListeMarches
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ListeMarches</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TitreMarche)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TitreMarche)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LienMarche)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LienMarche)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ListeDocs)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ListeDocs)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
